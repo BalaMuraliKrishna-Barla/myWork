@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+        body {
+            height: 100vh;
+        }
+        .main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-form {
+            border: 1px solid black;
+            width: 400px;
+            height: 300px;
+            background-color:grey;
+            color: #fff;
+        }
+        .login-form form {
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            padding: 30px;
+
+        }
+
+        .login-form .login-bottom {
+            display: inline-flex;
+            justify-content: space-between;
+        }
+        .login-form .register-section {
+            display: flex;
+            justify-content: center;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            height: 25px;
+            width: 250px;
+            position: relative;
+            left: 25px;
+            margin: 10px 0px 10px 0px;
+            transition: left 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+        }
+        .login-form input[type="text"]:focus,
+        .login-form input[type="password"]:focus {
+            height: 30px;
+            width: 300px;
+            left: 0px;
+            margin: 10px 0px 10px 0px;
+        }
+        .login-form input[type="checkbox"] {
+            cursor: pointer;
+        }
+        .login-form button {
+            height: 25px;
+            width: 257px;
+            position: relative;
+            left: 25px;
+            border: none;
+            border-radius: 5px;
+            transition: 0.15s ease-in-out;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .login-form button:hover {
+            height: 30px;
+            width: 307px;
+            left: 0px;
+            color: #fff;
+            background-image: radial-gradient( violet,indigo,blue,green,yellow,orange,red);
+            font-size: 18px;
+        }
+        .expand {
+            color: black;
+            
+        }
+        .expand:hover {
+            font-size: 19px;
+            text-decoration: none;
+            color: ;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="login-form">
+            <form>
+                <label>Username</label>
+                <input type="text">
+                <label>Password</label>
+                <input type="text">
+
+                <button>Submit</button>
+                <div class="login-bottom">
+                    <label id="checkbox"><input type="checkbox">Remember me</label>
+                    <a href="#" class="expand">Forgot password</a>
+                </div>
+                <div class="register-section">
+                    <p>Don't have an account?<a href="#" class="expand">Register</a></p> 
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
