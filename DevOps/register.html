@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        .main {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,43,121,1) 0%, rgba(0,212,255,1) 100%);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .batch {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .content {
+            display: flex;
+            padding: 20px;
+            margin: 10px;
+            justify-content: space-between;
+        }
+        .modal {
+            background-color: #fff;
+            width: 600px;
+            height: 550px;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+        .header {
+            padding: 5px;
+        }
+        .footer {
+            padding: 20px;
+        }
+        .radio-btns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content input {
+            height: 30px;
+            width: 250px;
+            border-radius: 7px;
+            border: none;
+            background-color: #e9e5e5;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,43,121,1) 0%, rgba(0,212,255,1) 100%);
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        span {
+            text-decoration: underline rgba(0,212,255,1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <form class="modal" onsubmit="handleClick(event)">
+            <div class="header">
+                <h1><span>Reg</span>istration</h1>
+            </div>
+            <div class="content">
+                <div class="batch">
+                    <label>Full Name</label> 
+                    <input type="text" id="fullName" placeholder="Enter your fullname"> 
+
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="batch">
+                    <label>User Name</label> 
+                    <input type="text" id="useName" placeholder="Enter your username">
+
+                    <label>Phone Number</label>
+                    <input type="text" id="phoneNumber" placeholder="Enter your phone number">
+
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Re-enter your password">
+                </div>
+            </div>
+            <div class="footer">
+                <label>Gender</label> 
+                <div class="radio-btns">
+                    <div><input type="radio" name="gender" id="male" value="Male">Male </div>
+                    <div><input type="radio" name="gender" id="female" value="Female">Female </div>
+                    <div><input type="radio" name="gender" id="others" value="Prefer not to say">Prefer not to say </div>
+                </div> <br>
+                <button type="submit" class="btn">Register</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function handleClick(e) {
+            e.preventDefault(); 
+
+            let fullName = document.getElementById("fullName").value;
+            let userName = document.getElementById("useName").value;
+            let email = document.getElementById("email").value;
+            let phoneNumber = document.getElementById("phoneNumber").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            let gender = document.querySelector('input[name="gender"]:checked') ? 
+                         document.querySelector('input[name="gender"]:checked').value : "Not selected";
+
+            alert(`Full Name: ${fullName}\nUser Name: ${userName}\nEmail: ${email}\nPhone: ${phoneNumber}\nGender: ${gender}`);
+        }
+    </script>
+
+</body>
+</html>
