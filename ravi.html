@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    input, button, h2 {
+        display: block;
+        width: 250px;
+        padding: 10px;
+        margin: 30px auto;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .main {
+        border: 2px dashed black;
+        height: 400px;
+        width: 400px;
+    }
+    </style>
+
+</head>
+<body>
+
+    <div class="main">
+
+        <h1>BMI CALCULATOR</h1>
+        
+        <input id="weight" type="text" placeholder="Weight in Kgs">
+        <input id="height" type="text" placeholder="Height in Mts">
+        
+        <button onclick="main()">Calculate</button>
+
+        <h2 id="result"></h2>
+        
+    </div>
+
+    <script>
+        function main() {
+                let weight = Number(document.getElementById("weight").value);
+                let height = Number(document.getElementById("height").value);
+                let result = document.getElementById("result");
+
+                let BMI = (weight / height ** 2).toFixed(2)
+
+                let category;
+                if (BMI <= 18.5) {
+                    category = "Under Weight";
+                } else if (BMI > 18.5 && BMI <= 24.9) {
+                    category = "Normal Weight";
+                } else if (BMI > 24.9 && BMI <= 29.9) {
+                    category = "Over Weight";
+                } else {
+                    category = "Obesity";
+                }
+
+                result.textContent = `RESULT : BMI = ${BMI}  
+                category = ${category}`;
+            }
+
+    </script>
+    
+</body>
+</html>
